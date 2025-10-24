@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "generated_at": "2025-10-24T15:38:24.393755+00:00",
+    "framework_version": "4.0.0",
+    "total_findings": 0
+  },
+  "executive_summary": {
+    "overall_risk_score": 0.0,
+    "critical_findings": 0,
+    "high_findings": 0,
+    "medium_findings": 0,
+    "low_findings": 0,
+    "total_tests": 2,
+    "success_rate": 0.0,
+    "business_impact": "LOW: Minor security issues",
+    "remediation_priority": [],
+    "compliance_status": {
+      "OWASP-Top-10": {
+        "status": "COMPLIANT",
+        "issues": []
+      },
+      "PCI-DSS": {
+        "status": "COMPLIANT",
+        "issues": []
+      }
+    }
+  },
+  "detailed_findings": [
+    {
+      "success": false,
+      "cve_id": "CVE-2024-SQL_INJECTION",
+      "target": {
+        "host": "testphp.vulnweb.com",
+        "port": 80,
+        "protocol": "http",
+        "service": "unknown",
+        "banner": ""
+      },
+      "status": 

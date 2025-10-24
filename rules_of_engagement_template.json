@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "authorization": {
+    "project_name": "VulnWeb Security Assessment",
+    "authorized_by": "Security Team Lead",
+    "contact_email": "security@example.com",
+    "organization": "Example Security Corp",
+    "purpose": "Authorized penetration testing of intentionally vulnerable web application"
+  },
+  "scope": {
+    "included_targets": [
+      "testphp.vulnweb.com",
+      "vulnweb.com"
+    ],
+    "excluded_targets": [],
+    "target_networks": [],
+    "allowed_modes": [
+      "probe",
+      "scan",
+      "exploit"
+    ],
+    "time_windows": [],
+    "valid_until": "2026-12-31T23:59:59Z"
+  },
+  "constraints": {
+    "max_requests_per_second": 10,
+    "allowed_ports": [80, 443, 8080],
+    "blacklisted_techniques": [],
+    "require_manual_approval": []
+  },
+  "approval": {
+    "approved": true,
+    "approved_by": "Chief Security Officer",
+    "approval_date": "2025-10-24",
+    "review_date": "2026-01-24"
+  },
+  "signature": {
+    "algorithm": "HMAC-SHA256",
+    "hmac": "PLACEHOLDER_WILL_BE_CALCULATED"
+  }

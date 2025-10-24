@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  
+  "authorization": {
+    "project_name": "VulnWeb Security Testing",
+    "authorized_by": "Security Team",
+    "contact_email": "security@localhost",
+    "organization": "Local Security Testing",
+    "business_unit": "Red Team",
+    "justification": "Authorized security testing of intentionally vulnerable test application"
+  },
+  
+  "scope": {
+    "included_targets": [
+      "testphp.vulnweb.com",
+      "vulnweb.com",
+      "localhost",
+      "127.0.0.1"
+    ],
+    
+    "excluded_targets": [],
+    
+    "target_networks": [],
+    
+    "allowed_modes": [
+      "probe",
+      "scan",
+      "exploit"
+    ],
+    
+    "time_windows": [],
+    
+    "valid_from": "2025-01-01T00:00:00Z",
+    "valid_until": "2026-12-31T23:59:59Z",
+    
+    "restrictions": {
+      "max_concurrent_targets": 10,
+      "max_requests_per_second": 10,
+      "allowed_exploit_types": [
+        "sql_injection",
+        "command_injection"
+      ],
+      "prohibited_actions": []
+    }
+  },
+  
+  "approval": {
+    "approved": true,
+    "approved_by": "Security Administrator",
+    "approval_date": "2025-10-24T00:00:00Z",
+    "approver_email": "admin@localhost",
+    "approval_ticket": "TEST-001",
+    "conditions": [
+      "Testing limited to authorized vulnerable test applications",
+      "No production systems targeted"
+    ]
+  },
+  
+  "reporting": {
+    "report_recipients": [
+      "security@localhost"
+    ],
+    "notification_on_critical": false,
+    "daily_summary": false,
+    "final_report_deadline": "2026-12-31"
+  },
+  
+  "emergency_contacts": {
+    "primary": {
+      "name": "Security Team Lead",
+      "email": "security@localhost",
+      "phone": "+1-000-000-0000"
+    },
+    "secondary": {
+      "name": "System Administrator",
+      "email": "admin@localhost",
+      "phone": "+1-000-000-0001"
+    }
+  },
+  
+  "signature": {
+    "hmac": "0f98b1f8c54f2cff28b95df490ab2df9b9da3e4b9849c6c79d61eeb19cc9ae59",
+    "algorithm": "HMAC-SHA256",
+    "signed_by": "Framework Administrator",
+    "signed_date": "2025-10-24T00:00:00Z"
+  }
+}

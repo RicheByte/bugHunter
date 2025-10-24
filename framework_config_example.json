@@ -1,0 +1,243 @@
+{
+  "execution": {
+    "max_workers": 20,
+    "max_concurrent": 50,
+    "requests_per_second": 10,
+    "timeout": 30,
+    "connection_pool_size": 100,
+    "enable_connection_pooling": true,
+    "enable_caching": true,
+    "cache_ttl_seconds": 3600
+  },
+  "security": {
+    "enable_evasion": true,
+    "enable_honeypot_detection": true,
+    "enable_ml_filtering": true,
+    "enable_waf_detection": true,
+    "enable_fingerprinting": true,
+    "adaptive_learning": true,
+    "polymorphic_payloads": true
+  },
+  "reporting": {
+    "generate_pdf": true,
+    "generate_html": true,
+    "generate_json": true,
+    "compliance_frameworks": [
+      "NIST-CSF",
+      "PCI-DSS",
+      "ISO-27001",
+      "CIS-Controls",
+      "OWASP-Top-10"
+    ],
+    "risk_threshold": 7.0,
+    "include_executive_summary": true,
+    "include_technical_details": true,
+    "include_compliance_mapping": true,
+    "include_gap_analysis": true,
+    "include_analytics": true,
+    "include_trend_analysis": true
+  },
+  "integrations": {
+    "siem": {
+      "enabled": false,
+      "type": "splunk",
+      "hec_url": "https://splunk.example.com:8088/services/collector",
+      "hec_token": "YOUR-SPLUNK-HEC-TOKEN",
+      "index": "security",
+      "sourcetype": "vulnerability_scan",
+      "verify_ssl": true
+    },
+    "ticketing": {
+      "enabled": false,
+      "type": "jira",
+      "url": "https://jira.example.com",
+      "username": "security-bot@example.com",
+      "api_token": "YOUR-JIRA-API-TOKEN",
+      "project_key": "SEC",
+      "default_assignee": "security-team",
+      "priority_mapping": {
+        "critical": "Highest",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "auto_create_tickets": true,
+      "auto_assign": true
+    },
+    "cmdb": {
+      "enabled": false,
+      "type": "servicenow",
+      "url": "https://instance.service-now.com",
+      "username": "integration_user",
+      "password": "YOUR-PASSWORD",
+      "table": "cmdb_ci_server",
+      "query_filter": "operational_status=1^install_status=1"
+    },
+    "vulnerability_management": {
+      "enabled": false,
+      "type": "tenable",
+      "access_key": "YOUR-TENABLE-ACCESS-KEY",
+      "secret_key": "YOUR-TENABLE-SECRET-KEY",
+      "scanner_id": "default",
+      "auto_export": false
+    },
+    "notification": {
+      "enabled": true,
+      "email": {
+        "enabled": false,
+        "smtp_server": "smtp.example.com",
+        "smtp_port": 587,
+        "from_address": "security@example.com",
+        "to_addresses": [
+          "security-team@example.com"
+        ],
+        "use_tls": true
+      },
+      "slack": {
+        "enabled": false,
+        "webhook_url": "https://hooks.slack.com/services/YOUR/WEBHOOK/URL",
+        "channel": "#security-alerts"
+      },
+      "teams": {
+        "enabled": false,
+        "webhook_url": "https://outlook.office.com/webhook/YOUR-WEBHOOK-URL"
+      }
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "cve_framework.log",
+    "max_file_size_mb": 100,
+    "backup_count": 5,
+    "enable_siem_logging": false,
+    "enable_audit_logging": true,
+    "audit_log_file": "logs/audit.json",
+    "enable_performance_logging": true,
+    "performance_log_file": "logs/performance.json",
+    "log_format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  "ml_models": {
+    "false_positive_reducer": {
+      "enabled": true,
+      "model_path": "models/fp_classifier.pkl",
+      "confidence_threshold": 0.7,
+      "auto_retrain": false,
+      "retrain_interval_days": 30
+    },
+    "vulnerability_predictor": {
+      "enabled": true,
+      "model_path": "models/vuln_predictor.pkl",
+      "prediction_threshold": 0.6,
+      "use_for_prioritization": true
+    },
+    "adaptive_learning": {
+      "enabled": true,
+      "learning_rate": 0.1,
+      "min_samples_for_learning": 10,
+      "auto_adjust_thresholds": true
+    }
+  },
+  "compliance": {
+    "enabled_frameworks": [
+      "NIST-CSF",
+      "PCI-DSS",
+      "ISO-27001",
+      "CIS-Controls",
+      "OWASP-Top-10"
+    ],
+    "generate_gap_analysis": true,
+    "auto_calculate_risk_scores": true,
+    "compliance_threshold": 80.0,
+    "alert_on_violations": true
+  },
+  "analytics": {
+    "enabled": true,
+    "store_scan_history": true,
+    "max_history_scans": 100,
+    "generate_trend_analysis": true,
+    "generate_risk_forecast": true,
+    "forecast_periods": 3,
+    "calculate_roi_metrics": true
+  },
+  "workflow": {
+    "enable_scheduling": true,
+    "enable_remediation_validation": true,
+    "remediation_retest_delay_hours": 24,
+    "enable_multi_phase_attacks": false,
+    "enable_exception_management": true,
+    "exception_default_duration_days": 90
+  },
+  "performance": {
+    "enable_connection_pooling": true,
+    "pool_size": 100,
+    "enable_result_caching": true,
+    "cache_ttl_seconds": 3600,
+    "memory_limit_mb": 2048,
+    "auto_optimize_memory": true,
+    "optimization_interval_minutes": 30
+  },
+  "monitoring": {
+    "enabled": true,
+    "health_check_interval_seconds": 60,
+    "collect_performance_metrics": true,
+    "track_business_kpis": true,
+    "enable_anomaly_detection": true,
+    "anomaly_threshold": 0.15,
+    "alert_on_high_error_rate": true,
+    "error_rate_threshold": 0.1,
+    "alert_on_slow_response": true,
+    "slow_response_threshold_seconds": 10.0
+  },
+  "advanced": {
+    "honeypot_detection": {
+      "enabled": true,
+      "detection_patterns": [
+        "honeypot",
+        "canary",
+        "deception"
+      ],
+      "avoid_suspicious_targets": true
+    },
+    "evasion": {
+      "rotate_user_agents": true,
+      "random_delays": true,
+      "delay_min_seconds": 0.5,
+      "delay_max_seconds": 3.0,
+      "use_polymorphic_payloads": true,
+      "payload_variations": 5,
+      "simulate_human_behavior": true
+    },
+    "rate_limiting": {
+      "adaptive": true,
+      "base_requests_per_second": 10,
+      "min_requests_per_second": 1,
+      "max_requests_per_second": 50,
+      "burst_size": 20
+    }
+  },
+  "credentials": {
+    "storage_method": "encrypted_file",
+    "encryption_algorithm": "AES-256",
+    "key_derivation": "PBKDF2",
+    "iterations": 100000,
+    "auto_rotate": false,
+    "rotation_interval_days": 90
+  },
+  "targets": {
+    "default_protocol": "http",
+    "default_port": 80,
+    "timeout_seconds": 30,
+    "max_redirects": 5,
+    "verify_ssl": false,
+    "excluded_networks": [
+      "127.0.0.0/8",
+      "10.0.0.0/8",
+      "172.16.0.0/12",
+      "192.168.0.0/16"
+    ],
+    "excluded_ports": [
+      22,
+      3389
+    ]
+  }
+}
