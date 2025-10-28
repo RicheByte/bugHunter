@@ -1,0 +1,348 @@
+{
+  "metadata": {
+    "generated_at": "2025-10-28T13:24:52.903650+00:00",
+    "framework_version": "4.0.0",
+    "total_findings": 1
+  },
+  "executive_summary": {
+    "overall_risk_score": 7.0,
+    "critical_findings": 0,
+    "high_findings": 1,
+    "medium_findings": 0,
+    "low_findings": 0,
+    "total_tests": 1,
+    "success_rate": 100.0,
+    "business_impact": "HIGH: Significant security gaps identified",
+    "remediation_priority": [
+      {
+        "cve_id": "CVE-2024-SQL_INJECTION",
+        "target": "http://testphp.vulnweb.com:80",
+        "risk_score": 7.0,
+        "recommendation": "Consult vendor security advisories"
+      }
+    ],
+    "compliance_status": {
+      "OWASP-Top-10": {
+        "status": "NON-COMPLIANT",
+        "issues": [
+          "A03: Injection"
+        ]
+      },
+      "PCI-DSS": {
+        "status": "NON-COMPLIANT",
+        "issues": [
+          "6.5.1: SQL Injection"
+        ]
+      }
+    }
+  },
+  "detailed_findings": [
+    {
+      "success": true,
+      "cve_id": "CVE-2024-SQL_INJECTION",
+      "target": "{'host': 'testphp.vulnweb.com', 'port': 80, 'protocol': 'http', 'service': 'unknown', 'banner': ''}",
+      "status": "success",
+      "output": "[SCAN] SQL Injection FOUND! Site is vulnerable.",
+      "evidence": [
+        "SQL error 'sql syntax' found at artists.php",
+        "Parameter: artist",
+        "HTTP 200 - 2174 bytes",
+        "[ML Advisory] Classification: True Positive (confidence: 0.60)"
+      ],
+      "session_established": false,
+      "payload_delivered": false,
+      "error_message": "",
+      "duration": 2.8388872146606445,
+      "timestamp": "2025-10-28T13:24:52.826149+00:00"
+    }
+  ],
+  "compliance": {
+    "NIST-CSF": {
+      "framework": "NIST Cybersecurity Framework",
+      "compliant": false,
+      "violations": [
+        {
+          "cve_id": "CVE-2024-SQL_INJECTION",
+          "target": "http://testphp.vulnweb.com:80",
+          "controls_affected": [
+            "ID.RA-1",
+            "PR.IP-12",
+            "DE.CM-4"
+          ],
+          "severity": 5.0
+        }
+      ],
+      "affected_controls": [
+        "ID.RA-1",
+        "DE.CM-4",
+        "PR.IP-12"
+      ],
+      "risk_score": 5.0
+    },
+    "PCI-DSS": {
+      "framework": "PCI DSS v4.0",
+      "compliant": false,
+      "violations": [
+        {
+          "cve_id": "CVE-2024-SQL_INJECTION",
+          "target": "http://testphp.vulnweb.com:80",
+          "controls_affected": [
+            "6.5.1",
+            "11.3.1"
+          ],
+          "severity": 5.0
+        }
+      ],
+      "affected_controls": [
+        "11.3.1",
+        "6.5.1"
+      ],
+      "risk_score": 5.0
+    },
+    "ISO-27001": {
+      "framework": "ISO/IEC 27001:2022",
+      "compliant": false,
+      "violations": [
+        {
+          "cve_id": "CVE-2024-SQL_INJECTION",
+          "target": "http://testphp.vulnweb.com:80",
+          "controls_affected": [
+            "A.8.8",
+            "A.8.16"
+          ],
+          "severity": 5.0
+        }
+      ],
+      "affected_controls": [
+        "A.8.8",
+        "A.8.16"
+      ],
+      "risk_score": 5.0
+    },
+    "CIS-Controls": {
+      "framework": "CIS Controls v8",
+      "compliant": false,
+      "violations": [
+        {
+          "cve_id": "CVE-2024-SQL_INJECTION",
+          "target": "http://testphp.vulnweb.com:80",
+          "controls_affected": [
+            "7.1",
+            "7.3",
+            "16.1"
+          ],
+          "severity": 5.0
+        }
+      ],
+      "affected_controls": [
+        "7.1",
+        "7.3",
+        "16.1"
+      ],
+      "risk_score": 5.0
+    },
+    "OWASP-Top-10": {
+      "framework": "OWASP Top 10:2021",
+      "compliant": false,
+      "violations": [
+        {
+          "cve_id": "CVE-2024-SQL_INJECTION",
+          "target": "http://testphp.vulnweb.com:80",
+          "controls_affected": [
+            "A03:2021"
+          ],
+          "severity": 5.0
+        }
+      ],
+      "affected_controls": [
+        "A03:2021"
+      ],
+      "risk_score": 5.0
+    }
+  },
+  "gap_analysis": {
+    "timestamp": "2025-10-28T13:24:52.903620+00:00",
+    "overall_compliance_score": 0.0,
+    "frameworks": {
+      "NIST-CSF": {
+        "framework": "NIST Cybersecurity Framework",
+        "compliant": false,
+        "violations": [
+          {
+            "cve_id": "CVE-2024-SQL_INJECTION",
+            "target": "http://testphp.vulnweb.com:80",
+            "controls_affected": [
+              "ID.RA-1",
+              "PR.IP-12",
+              "DE.CM-4"
+            ],
+            "severity": 5.0
+          }
+        ],
+        "affected_controls": [
+          "ID.RA-1",
+          "DE.CM-4",
+          "PR.IP-12"
+        ],
+        "risk_score": 5.0
+      },
+      "PCI-DSS": {
+        "framework": "PCI DSS v4.0",
+        "compliant": false,
+        "violations": [
+          {
+            "cve_id": "CVE-2024-SQL_INJECTION",
+            "target": "http://testphp.vulnweb.com:80",
+            "controls_affected": [
+              "6.5.1",
+              "11.3.1"
+            ],
+            "severity": 5.0
+          }
+        ],
+        "affected_controls": [
+          "11.3.1",
+          "6.5.1"
+        ],
+        "risk_score": 5.0
+      },
+      "ISO-27001": {
+        "framework": "ISO/IEC 27001:2022",
+        "compliant": false,
+        "violations": [
+          {
+            "cve_id": "CVE-2024-SQL_INJECTION",
+            "target": "http://testphp.vulnweb.com:80",
+            "controls_affected": [
+              "A.8.8",
+              "A.8.16"
+            ],
+            "severity": 5.0
+          }
+        ],
+        "affected_controls": [
+          "A.8.8",
+          "A.8.16"
+        ],
+        "risk_score": 5.0
+      },
+      "CIS-Controls": {
+        "framework": "CIS Controls v8",
+        "compliant": false,
+        "violations": [
+          {
+            "cve_id": "CVE-2024-SQL_INJECTION",
+            "target": "http://testphp.vulnweb.com:80",
+            "controls_affected": [
+              "7.1",
+              "7.3",
+              "16.1"
+            ],
+            "severity": 5.0
+          }
+        ],
+        "affected_controls": [
+          "7.1",
+          "7.3",
+          "16.1"
+        ],
+        "risk_score": 5.0
+      },
+      "OWASP-Top-10": {
+        "framework": "OWASP Top 10:2021",
+        "compliant": false,
+        "violations": [
+          {
+            "cve_id": "CVE-2024-SQL_INJECTION",
+            "target": "http://testphp.vulnweb.com:80",
+            "controls_affected": [
+              "A03:2021"
+            ],
+            "severity": 5.0
+          }
+        ],
+        "affected_controls": [
+          "A03:2021"
+        ],
+        "risk_score": 5.0
+      }
+    },
+    "critical_gaps": [],
+    "remediation_priority": [
+      {
+        "cve_id": "CVE-2024-SQL_INJECTION",
+        "target": "http://testphp.vulnweb.com:80",
+        "controls_affected": [
+          "ID.RA-1",
+          "PR.IP-12",
+          "DE.CM-4"
+        ],
+        "severity": 5.0
+      },
+      {
+        "cve_id": "CVE-2024-SQL_INJECTION",
+        "target": "http://testphp.vulnweb.com:80",
+        "controls_affected": [
+          "6.5.1",
+          "11.3.1"
+        ],
+        "severity": 5.0
+      },
+      {
+        "cve_id": "CVE-2024-SQL_INJECTION",
+        "target": "http://testphp.vulnweb.com:80",
+        "controls_affected": [
+          "A.8.8",
+          "A.8.16"
+        ],
+        "severity": 5.0
+      },
+      {
+        "cve_id": "CVE-2024-SQL_INJECTION",
+        "target": "http://testphp.vulnweb.com:80",
+        "controls_affected": [
+          "7.1",
+          "7.3",
+          "16.1"
+        ],
+        "severity": 5.0
+      },
+      {
+        "cve_id": "CVE-2024-SQL_INJECTION",
+        "target": "http://testphp.vulnweb.com:80",
+        "controls_affected": [
+          "A03:2021"
+        ],
+        "severity": 5.0
+      }
+    ],
+    "estimated_remediation_effort": {}
+  },
+  "analytics": {
+    "trends": {},
+    "risk_trajectory": {},
+    "business_kpis": {
+      "total_vulnerabilities": 1,
+      "targets_scanned": 1,
+      "critical_findings": 0,
+      "avg_time_to_remediate": 0.0,
+      "coverage_percentage": 75.0
+    }
+  },
+  "performance": {
+    "total_requests": 1,
+    "successful_requests": 1,
+    "failed_requests": 0,
+    "avg_response_time": 2.8388872146606445,
+    "requests_per_second": 0.22143818342743346
+  },
+  "health": {
+    "status": "healthy",
+    "uptime_seconds": 4.515963,
+    "uptime_hours": 0.0012544341666666668,
+    "performance_score": 90.0,
+    "error_rate": 0.0,
+    "throughput": 0.22143818342743346,
+    "last_updated": "2025-10-28T13:24:52.935722+00:00"
+  }
+}
