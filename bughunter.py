@@ -3246,7 +3246,7 @@ def main():
   • Compliance Audits
 
 🔗 MORE INFO:
-  GitHub: https://github.com/RicheByte/cveAutometer
+  GitHub: https://github.com/RicheByte/bugHunter
   Docs: https://bughunter.richebyte.com
   Support: security@richebyte.com
 
