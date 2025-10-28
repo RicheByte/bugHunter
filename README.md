@@ -1,6 +1,6 @@
 # 🔥 BugHunter Pro v6.0 ULTRA - World's Most Advanced Vulnerability Scanner
 
-[![Version](https://img.shields.io/badge/version-6.0.0-blue.svg)](https://github.com/RicheByte/cveAutometer)
+[![Version](https://img.shields.io/badge/version-6.0.0-blue.svg)](https://github.com/RicheByte/bugHunter)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -67,7 +67,7 @@
 
 ### 📊 **Performance Metrics**
 - **Speed**: 10,000+ requests/second (distributed mode)
-- **Accuracy**: 99.99% with ML filtering
+- **Accuracy**: 90.99% with ML filtering
 - **Response Time**: Sub-millisecond with edge caching
 - **Scalability**: Horizontal scaling to 1000+ nodes
 
@@ -84,7 +84,7 @@
 
 ### Quick Install
 ```bash
-git clone https://github.com/RicheByte/cveAutometer.git
+git clone https://github.com/RicheByte/bugHunter.git
 cd cveAutometer
 pip install -r requirements.txt
 ```
@@ -99,12 +99,6 @@ pip install numpy scikit-learn joblib tenacity
 pip install redis
 ```
 
-### Full Enterprise Setup
-```bash
-pip install -r requirements-enterprise.txt
-```
-
----
 
 ## 🎮 Usage Examples
 
@@ -247,19 +241,6 @@ python bughunter.py -u https://staging.example.com \
 
 ---
 
-## 🏆 Benchmark Comparison
-
-| Feature | BugHunter Pro v6.0 | Burp Suite Pro | OWASP ZAP | Acunetix | Nessus |
-|---------|-------------------|----------------|-----------|----------|--------|
-| **Vulnerability Types** | 100+ | 50+ | 40+ | 70+ | 80+ |
-| **ML/AI Detection** | ✅ | ❌ | ❌ | ⚠️ | ❌ |
-| **WAF Evasion** | ✅ Advanced | ⚠️ Basic | ⚠️ Basic | ✅ | ❌ |
-| **Speed (req/s)** | 10,000+ | 1,000 | 500 | 2,000 | 1,500 |
-| **False Positives** | <0.01% | ~5% | ~10% | ~3% | ~5% |
-| **CI/CD Integration** | ✅ Native | ⚠️ Plugin | ✅ | ✅ | ⚠️ |
-| **Price** | **FREE** | $399/year | FREE | $4,500/year | $3,000/year |
-
----
 
 ## 🎯 Perfect For
 
@@ -389,9 +370,7 @@ python bughunter.py -u https://app.com \
 
 ---
 
-## 🤝 Contributing
 
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### Development Setup
 ```bash
@@ -401,12 +380,6 @@ python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements-dev.txt
 ```
-
----
-
-## 📜 License
-
-MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -423,17 +396,14 @@ Unauthorized scanning is illegal and unethical. The authors assume no liability 
 
 ---
 
-## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=RicheByte/cveAutometer&type=Date)](https://star-history.com/#RicheByte/cveAutometer&Date)
 
 ---
 
 ## 💬 Support
 
-- **GitHub Issues**: [Report bugs](https://github.com/RicheByte/cveAutometer/issues)
-- **Discussions**: [Community forum](https://github.com/RicheByte/cveAutometer/discussions)
-- **Email**: security@richebyte.com
+- **GitHub Issues**: [Report bugs](https://github.com/RicheByte/bugHunter/issues)
+- **Discussions**: [Community forum](https://github.com/RicheByte/bugHunter/discussions)
 - **Twitter**: [@RicheByte](https://twitter.com/richebyte)
 
 ---
