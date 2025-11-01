@@ -47,6 +47,90 @@ BugHunter Pro v7.0 is a realistic, honest, and transparent vulnerability scanner
 
 BugHunter Pro v7.0 provides a comprehensive solution for identifying vulnerabilities across various systems. It integrates an up-to-date CVE database and uses a realistic approach to vulnerability scanning, focusing on actual implementation and measurable results rather than exaggerated claims.
 
+### Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         BugHunter Pro v7.0                              │
+│                    Realistic Vulnerability Scanner                      │
+└─────────────────────────────────────────────────────────────────────────┘
+                                   │
+                    ┌──────────────┴──────────────┐
+                    │                             │
+         ┌──────────▼──────────┐      ┌──────────▼──────────┐
+         │   User Interface    │      │  Configuration      │
+         │   - CLI Arguments   │      │  - YAML Files       │
+         │   - Interactive     │      │  - ENV Variables    │
+         └──────────┬──────────┘      └──────────┬──────────┘
+                    │                             │
+                    └──────────────┬──────────────┘
+                                   │
+                    ┌──────────────▼──────────────┐
+                    │      Core Infrastructure    │
+                    │  ┌───────────────────────┐  │
+                    │  │  Async HTTP Engine    │  │
+                    │  │  - Connection Pool    │  │
+                    │  │  - Rate Limiter       │  │
+                    │  │  - 500+ req/s         │  │
+                    │  └──────────┬────────────┘  │
+                    │  ┌──────────▼────────────┐  │
+                    │  │  Plugin Manager       │  │
+                    │  │  - Dynamic Loading    │  │
+                    │  │  - Category System    │  │
+                    │  └───────────────────────┘  │
+                    └──────────────┬──────────────┘
+                                   │
+        ┌──────────────────────────┼──────────────────────────┐
+        │                          │                          │
+┌───────▼────────┐      ┌─────────▼──────────┐    ┌─────────▼─────────┐
+│ CVE Database   │      │ Detection Modules  │    │ Advanced Features │
+│ Integration    │      │                    │    │                   │
+├────────────────┤      ├────────────────────┤    ├───────────────────┤
+│ • NVD API      │      │ • SQL Injection    │    │ • Evasion Engine  │
+│ • ExploitDB    │      │ • XSS Detection    │    │ • ML Predictor    │
+│ • GitHub Adv.  │      │ • Open Redirect    │    │ • TLS Analyzer    │
+│ • Payload Gen  │      │ • Path Traversal   │    │ • Cloud Scanner   │
+│                │      │ • SSRF Testing     │    │                   │
+│ 45,000+ CVEs   │      │ • Header Analysis  │    │ 8 Encoding Types  │
+└───────┬────────┘      └─────────┬──────────┘    └─────────┬─────────┘
+        │                         │                         │
+        └─────────────────────────┼─────────────────────────┘
+                                  │
+                    ┌─────────────▼─────────────┐
+                    │    SQLite Database        │
+                    │  ┌─────────────────────┐  │
+                    │  │ • CVEs (indexed)    │  │
+                    │  │ • Exploits          │  │
+                    │  │ • Findings          │  │
+                    │  │ • Scan History      │  │
+                    │  │ • Payloads          │  │
+                    │  │ • Sync Metadata     │  │
+                    │  └─────────────────────┘  │
+                    └─────────────┬─────────────┘
+                                  │
+        ┌─────────────────────────┼─────────────────────────┐
+        │                         │                         │
+┌───────▼────────┐      ┌─────────▼──────────┐    ┌───────▼────────┐
+│ Report Engine  │      │  Analysis Engine   │    │ Audit System   │
+├────────────────┤      ├────────────────────┤    ├────────────────┤
+│ • JSON         │      │ • Severity Scoring │    │ • HMAC Signing │
+│ • HTML         │      │ • Compliance Map   │    │ • JSONL Logs   │
+│ • CSV          │      │ • False Positive   │    │ • SQLite DB    │
+│ • SARIF        │      │   Filtering (ML)   │    │ • Integrity    │
+│ • Markdown     │      │ • Risk Assessment  │    │   Verification │
+└────────────────┘      └────────────────────┘    └────────────────┘
+
+Data Flow:
+1. User initiates scan → Configuration loaded
+2. Async Engine crawls target → Discovers attack surface
+3. CVE Database queried → Generates targeted payloads
+4. Detection modules execute → Findings collected
+5. ML Predictor filters → False positives removed
+6. Compliance mapping applied → Findings enriched
+7. Reports generated → Multi-format output
+8. Audit log signed → Integrity verified
+```
+
 ---
 
 ## What's New in v7.0
@@ -105,7 +189,7 @@ BugHunter Pro v7.0 represents a complete rewrite, moving from a marketing-driven
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/RicheByte/bugHunter.git
-    cd cveAutometer
+    cd bugHunter
     ```
 
 2.  **Create and activate a virtual environment:**
@@ -368,7 +452,7 @@ Total:            26/26 passing (100%)
 ## Project Structure
 
 ```
-cveAutometer/
+bugHunter/
 ├── core/                          # Phase 1: Core Infrastructure
 │   ├── async_engine.py           # Async HTTP engine (500+ req/s)
 │   ├── plugin_manager.py         # Plugin architecture (450 lines)
@@ -566,7 +650,7 @@ Contributions are welcome! Please follow these guidelines:
 ```bash
 # Clone repository
 git clone https://github.com/RicheByte/bugHunter.git
-cd cveAutometer
+cd bugHunter
 
 # Create virtual environment
 python -m venv .venv
