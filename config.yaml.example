@@ -1,0 +1,235 @@
+# BugHunter Pro v7.0 - Configuration Example
+# Copy this file to config.yaml and customize for your environment
+
+# Scanner Configuration
+scanner:
+  # Performance Settings
+  max_threads: 50                  # Number of concurrent threads (default: 50, max recommended: 200)
+  timeout: 10                      # Request timeout in seconds (default: 10)
+  max_depth: 3                     # Maximum crawl depth (default: 3)
+  max_pages: 500                   # Maximum pages to crawl (default: 500)
+  rate_limit_delay: 0.1            # Delay between requests in seconds (default: 0.1)
+  
+  # User Agent
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  
+  # SSL/TLS Settings
+  verify_ssl: false                # Verify SSL certificates (default: false for testing)
+  
+  # Advanced Features
+  adaptive_rate_limit: true        # Enable adaptive rate limiting (default: true)
+  follow_redirects: true           # Follow HTTP redirects (default: true)
+
+# Detection Settings
+detection:
+  # Machine Learning
+  enable_ml: true                  # Enable ML false positive reduction (default: true)
+  ml_model_path: "models/fp_classifier.pkl"  # Path to ML model
+  
+  # Evasion Techniques
+  enable_evasion: false            # Enable WAF evasion techniques (default: false)
+  evasion_level: "medium"          # Evasion level: low, medium, high (default: medium)
+  
+  # Compliance Mapping
+  enable_compliance: true          # Enable compliance framework mapping (default: true)
+  frameworks:                      # Active compliance frameworks
+    - "NIST-CSF"
+    - "PCI-DSS"
+    - "OWASP-Top-10"
+    - "ISO-27001"
+    - "CIS"
+
+# CVE Database Settings
+cve_database:
+  # NVD API Configuration
+  nvd_api_key: ""                  # NVD API key (optional, increases rate limit from 5/30s to 0.6s)
+  nvd_base_url: "https://services.nvd.nist.gov/rest/json/cves/2.0"
+  
+  # Database Settings
+  database_path: "database/cve_database.db"  # SQLite database path
+  
+  # Synchronization Schedule
+  sync_enabled: true               # Enable automatic CVE sync (default: true)
+  sync_schedule: "daily"           # Sync schedule: daily, weekly, manual (default: daily)
+  sync_hour: 2                     # Hour to run daily sync (0-23, default: 2 AM)
+  
+  # ExploitDB Settings
+  exploitdb_url: "https://gitlab.com/exploit-database/exploitdb/-/raw/main/files_exploits.csv"
+  exploitdb_cache_hours: 24        # Cache ExploitDB data for N hours (default: 24)
+  
+  # GitHub Advisory Settings
+  github_advisory_enabled: true    # Enable GitHub Advisory sync (default: true)
+  github_rate_limit: 60            # GitHub API rate limit per hour (unauthenticated: 60)
+
+# Payload Generation
+payloads:
+  # Encoding Options
+  encoding_methods:                # Enabled encoding methods
+    - "none"
+    - "url"
+    - "unicode"
+    - "base64"
+    - "hex"
+  
+  # Payload Categories
+  categories:                      # Enabled vulnerability categories
+    - "sql_injection"
+    - "xss"
+    - "xxe"
+    - "ssrf"
+    - "lfi"
+    - "command_injection"
+  
+  # Effectiveness Threshold
+  min_effectiveness: 0.5           # Minimum effectiveness score (0.0-1.0, default: 0.5)
+
+# Reporting Configuration
+reporting:
+  # Output Directory
+  output_dir: "./reports"          # Directory for generated reports
+  
+  # Report Formats
+  formats:                         # Enabled report formats
+    - "json"
+    - "html"
+    - "csv"
+    - "sarif"                      # SARIF format for CI/CD integration
+    - "markdown"
+  
+  # Report Content
+  include_false_positives: false   # Include likely false positives in reports (default: false)
+  include_compliance: true         # Include compliance mapping in reports (default: true)
+  include_remediation: true        # Include remediation advice (default: true)
+  
+  # PDF Settings (if PDF enabled)
+  pdf_logo: ""                     # Path to logo for PDF reports (optional)
+  pdf_company_name: ""             # Company name for PDF reports (optional)
+
+# Crypto/TLS Analysis
+crypto:
+  # TLS Settings
+  enabled: true                    # Enable TLS/SSL analysis (default: true)
+  min_tls_version: "1.2"           # Minimum acceptable TLS version (1.0, 1.1, 1.2, 1.3)
+  
+  # Cipher Analysis
+  check_weak_ciphers: true         # Check for weak ciphers (default: true)
+  weak_ciphers:                    # List of weak ciphers to detect
+    - "RC4"
+    - "DES"
+    - "3DES"
+    - "MD5"
+  
+  # Certificate Validation
+  check_cert_expiry: true          # Check certificate expiration (default: true)
+  cert_expiry_warning_days: 30     # Warn if cert expires in N days (default: 30)
+
+# Cloud Metadata Scanner
+cloud:
+  # Cloud Providers
+  enabled: true                    # Enable cloud metadata scanning (default: true)
+  providers:                       # Enabled cloud providers
+    - "aws"
+    - "azure"
+    - "gcp"
+  
+  # SSRF Settings
+  ssrf_timeout: 5                  # SSRF request timeout in seconds (default: 5)
+  ssrf_variants: 30                # Number of SSRF payload variants (default: 30)
+
+# Logging Configuration
+logging:
+  # Log Level
+  level: "INFO"                    # Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  
+  # Log Files
+  file: "logs/bughunter.log"       # Log file path
+  max_size_mb: 100                 # Maximum log file size in MB (default: 100)
+  backup_count: 5                  # Number of backup log files (default: 5)
+  
+  # Console Output
+  console_output: true             # Enable console logging (default: true)
+  colored_output: true             # Enable colored console output (default: true)
+
+# Audit Logging
+audit:
+  enabled: true                    # Enable HMAC-signed audit logging (default: true)
+  audit_file: "audit.jsonl"        # Audit log file (JSONL format)
+  audit_db: "audit.db"             # Audit database (SQLite)
+
+# Performance Tuning
+performance:
+  # Connection Pooling
+  connection_pool_size: 100        # HTTP connection pool size (default: 100)
+  connection_pool_maxsize: 200     # Maximum pool size (default: 200)
+  
+  # Caching
+  cache_enabled: true              # Enable caching (default: true)
+  cache_ttl: 3600                  # Cache TTL in seconds (default: 3600 = 1 hour)
+  cache_max_size: 1000             # Maximum cache entries (default: 1000)
+  
+  # Redis Cache (optional, for distributed scanning)
+  redis_url: ""                    # Redis URL (e.g., "redis://localhost:6379/0")
+  redis_enabled: false             # Enable Redis caching (default: false)
+
+# Plugin System
+plugins:
+  # Plugin Discovery
+  plugin_dirs:                     # Directories to search for plugins
+    - "plugins"
+    - "custom_plugins"
+  
+  # Auto-load Plugins
+  autoload: true                   # Automatically load plugins on startup (default: true)
+  
+  # Plugin Filters
+  enabled_categories:              # Only load plugins in these categories
+    - "injection"
+    - "xss"
+    - "auth"
+    - "config"
+    - "crypto"
+  
+  # Plugin Timeout
+  plugin_timeout: 30               # Plugin execution timeout in seconds (default: 30)
+
+# Notifications (optional)
+notifications:
+  # Webhook
+  webhook_enabled: false           # Enable webhook notifications (default: false)
+  webhook_url: ""                  # Webhook URL (e.g., "https://hooks.slack.com/...")
+  
+  # Slack
+  slack_enabled: false             # Enable Slack notifications (default: false)
+  slack_webhook: ""                # Slack webhook URL
+  
+  # Email (requires SMTP configuration)
+  email_enabled: false             # Enable email notifications (default: false)
+  smtp_host: ""                    # SMTP server host
+  smtp_port: 587                   # SMTP server port
+  smtp_user: ""                    # SMTP username
+  smtp_password: ""                # SMTP password (use environment variable!)
+  email_from: ""                   # From email address
+  email_to: []                     # List of recipient email addresses
+
+# CI/CD Integration
+cicd:
+  # Fail on Severity
+  fail_on_critical: false          # Exit with error code if critical vulns found (default: false)
+  fail_on_high: false              # Exit with error code if high vulns found (default: false)
+  
+  # Security Policy
+  policy_file: ""                  # Path to security policy JSON file (optional)
+  
+  # Output Format
+  junit_output: false              # Generate JUnit XML output for CI/CD (default: false)
+  junit_file: "junit-results.xml"  # JUnit XML output file
+
+# Environment Variable Overrides
+# Any setting can be overridden with environment variables using the pattern:
+# BUGHUNTER_SECTION_KEY=value
+#
+# Examples:
+#   BUGHUNTER_SCANNER_MAX_THREADS=100
+#   BUGHUNTER_CVE_DATABASE_NVD_API_KEY=your-api-key
+#   BUGHUNTER_LOGGING_LEVEL=DEBUG
+#   BUGHUNTER_PERFORMANCE_REDIS_URL=redis://localhost:6379/0
