@@ -545,6 +545,7 @@ BugHunter maps vulnerabilities to compliance frameworks:
 
 ### v7.1.0 (Q1 2026)
 
+*   **Real Dataset Integration**: Include public benchmark scan reports and anonymized test data to elevate credibility from anecdotal to peer-review ready. This will provide verifiable validation metrics against industry-standard test suites (OWASP Benchmark, NIST SAMATE).
 *   Expand ML training dataset with real-world examples (target: 1000+ samples)
 *   Add 40+ more test cases (target: 50 total accuracy tests)
 *   Implement Redis caching for distributed scanning
