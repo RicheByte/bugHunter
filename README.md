@@ -757,15 +757,13 @@ BugHunter v7.0 is a solid tool for automated vulnerability scanning with integra
 
 ### Documentation
 
-*   **CHANGELOG.md**: Version history and changes.
-*   **ACCURACY_REPORT.md**: Detailed accuracy metrics and methodology.
 *   **config.yaml.example**: Complete configuration reference (100+ options).
 
 ### Community
 
 *   **GitHub Issues**: [https://github.com/RicheByte/bugHunter/issues](https://github.com/RicheByte/bugHunter/issues)
 *   **GitHub Discussions**: [https://github.com/RicheByte/bugHunter/discussions](https://github.com/RicheByte/bugHunter/discussions)
-*   **Email**: security@richebyte.com
+
 
 ### Reporting Bugs
 
