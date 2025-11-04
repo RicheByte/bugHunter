@@ -2,7 +2,7 @@
 
 ---
 
-# BugHunter Pro v7.0 - Realistic Vulnerability Scanner
+# BugHunter Pro v7.0 - Vulnerability Scanner
 
 [![Version](https://img.shields.io/badge/version-7.0.0-blue.svg)](https://github.com/RicheByte/bugHunter)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
