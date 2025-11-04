@@ -1,7 +1,5 @@
 
 
----
-
 # BugHunter Pro v7.0 - Vulnerability Scanner
 
 [![Version](https://img.shields.io/badge/version-7.0.0-blue.svg)](https://github.com/RicheByte/bugHunter)
@@ -11,8 +9,8 @@
 [![Tests](https://img.shields.io/badge/tests-26%2F26_passing-brightgreen.svg)](tests/)
 [![Accuracy](https://img.shields.io/badge/accuracy-100%25-green.svg)](ACCURACY_REPORT.md)
 
-BugHunter Pro v7.0 is a realistic, honest, and transparent vulnerability scanner with working features, tested performance, and documented limitations. Unlike marketing-driven tools, every feature is implemented, tested, and documented with real metrics.
 
+![Demo Video](/assets/video.gif)
 ---
 
 ## Table of Contents
@@ -230,7 +228,7 @@ reportlab>=4.0.0        # PDF reporting
 ---
 
 ## Usage Examples
-
+![Reports](/assets/Reports.png)
 ### Basic Scan
 ```bash
 python bughunter.py -u https://example.com
@@ -380,7 +378,7 @@ export BUGHUNTER_PERFORMANCE_REDIS_URL="redis://localhost:6379/0"
 See `config.yaml.example` for all 100+ configuration options.
 
 ---
-
+![Inigration](/assets/integration.gif)
 ## Testing
 
 BugHunter v7.0 includes comprehensive testing across 3 categories:
@@ -424,6 +422,8 @@ Total:            26/26 passing (100%)
 ```
 
 ---
+
+![Benchmarks](/assets/benchmarks.gif)
 
 ## Performance Metrics
 
@@ -540,7 +540,7 @@ BugHunter maps vulnerabilities to compliance frameworks:
 *   A10: Server-Side Request Forgery (SSRF)
 
 ---
-
+![Accuracy](/assets/accuracy.png)
 ## Roadmap
 
 ### v7.1.0 (Q1 2026)
@@ -747,7 +747,7 @@ BugHunter v7.0 is a solid tool for automated vulnerability scanning with integra
 *   **Q: How do I configure scan intensity?**
     *   A: Use scan modes (`--mode quick|full|stealth|aggressive`) or customize threads, depth, and delay parameters.
 *   **Q: How do I reduce false positives?**
-    *   A: Enable ML filtering (`--enable-ml`) and review `ACCURACY_REPORT.md` for known limitations.
+    *   A: Enable ML filtering (`--enable-ml`) and review for known limitations.
 *   **Q: Can I scan password-protected sites?**
     *   A: Yes, use cookie-based authentication. Set cookies in the session or provide authentication credentials via the config file.
 
@@ -776,33 +776,7 @@ When reporting bugs, please include:
 5.  Error messages or unexpected behavior
 6.  Minimal reproducible example
 
----
 
-## License
-
-MIT License
-
-Copyright (c) 2025 RicheByte
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
----
 
 ## Acknowledgments
 
@@ -837,16 +811,3 @@ SOFTWARE.
 
 ---
 
-## Citations
-
-When citing BugHunter in academic work:
-
-```
-RicheByte. (2025). BugHunter Pro v7.0: Realistic Vulnerability Scanner
-with Integrated CVE Database. GitHub.
-https://github.com/RicheByte/bugHunter
-```
-
-BibTeX:
-```bibtex
-@software
